@@ -1,6 +1,10 @@
+"""
+Automated username changer script - Version 1.0
+"""
 import requests
 import time
 import sys
+import os
 from typing import Dict, Any
 from urllib.parse import urlencode, quote_plus
 from config import (
@@ -8,7 +12,7 @@ from config import (
     DELAY_BETWEEN_REQUESTS, DEFAULT_HEADERS, VERIFY_SSL
 )
 from logger_setup import setup_logger
-import user_config
+import user_config_v1 as user_config
 
 class UsernameChanger:
     def __init__(self):
@@ -123,6 +127,7 @@ class UsernameChanger:
         self.session.close()
 
 if __name__ == "__main__":
+    import os
     print("\nUsername Changer Automation")
     print("==========================\n")
 
